@@ -13,8 +13,7 @@ import static utilities.DriverSetup.getDriver;
 
 public class BasePage {
     public WebElement getElement(By locator) {
-        waitForElementToBeVisible(locator);
-        return getDriver().findElement(locator);
+        return waitForElementToBePresence(locator);
     }
     public void clickOnElement(By locator) {
         waitForElementToBeClickable(locator);
@@ -29,9 +28,9 @@ public class BasePage {
         getElement(locator).clear();
         getElement(locator).sendKeys(inputText);
     }
-    public void waitForElementToBeVisible(By locator) {
+    public WebElement waitForElementToBePresence(By locator) {
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(15));
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
+        return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
     public void waitForElementToBeClickable(By locator) {
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(15));
