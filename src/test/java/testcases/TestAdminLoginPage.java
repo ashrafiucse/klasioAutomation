@@ -6,6 +6,8 @@ import org.testng.annotations.Test;
 import pages.*;
 import utilities.DriverSetup;
 
+import static utilities.DataSet.adminLoginPageUrl;
+
 public class TestAdminLoginPage extends DriverSetup {
     AdminLoginPage adminLoginPage = new AdminLoginPage();
     AdminForgetPage adminForgetPage = new AdminForgetPage();
@@ -14,28 +16,28 @@ public class TestAdminLoginPage extends DriverSetup {
 
     @Test
     void testLoginPageLoadSuccessfully() {
-        getDriver().get(adminLoginPage.logInPageUrl);
-        Assert.assertEquals(getDriver().getCurrentUrl(),adminLoginPage.logInPageUrl);
+        getDriver().get(adminLoginPageUrl);
+        Assert.assertEquals(getDriver().getCurrentUrl(),adminLoginPageUrl);
 
     }
 
     @Test
     void testForgetPasswordPageRedirectSuccessfully() {
-        getDriver().get(adminLoginPage.logInPageUrl);
+        getDriver().get(adminLoginPageUrl);
         adminLoginPage.clickOnElement(adminLoginPage.forgotPasswordLink);
         Assert.assertEquals(getDriver().getCurrentUrl(),adminForgetPage.forgetPageUrl);
     }
 
     @Test
     void testRegistrationPageLoadSuccessfully() {
-        getDriver().get(adminLoginPage.logInPageUrl);
+        getDriver().get(adminLoginPageUrl);
         adminLoginPage.clickOnElement(adminLoginPage.signUpLink);
         Assert.assertEquals(getDriver().getCurrentUrl(),adminRegistrationPage.adminRegistrationPageUrl);
     }
 
     @Test
     void testLoginWithValidCredentials() {
-        getDriver().get(adminLoginPage.logInPageUrl);
+        getDriver().get(adminLoginPageUrl);
         adminLoginPage.sendKeysText(adminLoginPage.emailInputField,"instructor@khanacademy.com");
         adminLoginPage.sendKeysText(adminLoginPage.passwordInputField,"123456789");
         adminLoginPage.clickOnElement(adminLoginPage.logInButton);
@@ -44,7 +46,7 @@ public class TestAdminLoginPage extends DriverSetup {
 
     @Test
     void testLoginWithInvalidCredentials() {
-        getDriver().get(adminLoginPage.logInPageUrl);
+        getDriver().get(adminLoginPageUrl);
         adminLoginPage.sendKeysText(adminLoginPage.emailInputField,"instructor@khanacademy.com");
         adminLoginPage.sendKeysText(adminLoginPage.passwordInputField,"1234567890");
         adminLoginPage.clickOnElement(adminLoginPage.logInButton);

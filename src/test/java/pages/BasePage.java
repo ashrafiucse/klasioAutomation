@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -42,5 +43,14 @@ public class BasePage {
     }
     public String getElementText(By locator) {
         return getElement(locator).getText();
+    }
+
+    public void hoverOverElement(By locator) {
+        Actions actions = new Actions(getDriver());
+        actions.clickAndHold(getElement(locator)).perform();
+    }
+
+    public void acceptAlert() {
+        getDriver().switchTo().alert().accept();
     }
 }

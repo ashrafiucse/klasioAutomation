@@ -3,7 +3,6 @@ package pages;
 import org.openqa.selenium.By;
 
 public class AdminLoginPage extends BasePage{
-    public String logInPageUrl = "https://app.klasio.dev/login";
     public String warningMessageText = "These credentials do not match our records.";
     public By emailInputField = By.id("email");
     public By passwordInputField = By.id("password");

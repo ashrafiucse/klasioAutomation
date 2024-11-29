@@ -6,6 +6,8 @@ import pages.AdminForgetPage;
 import pages.AdminLoginPage;
 import utilities.DriverSetup;
 
+import static utilities.DataSet.adminLoginPageUrl;
+
 public class TestForgetPasswordPage extends DriverSetup {
     AdminForgetPage adminForgetPage = new AdminForgetPage();
     AdminLoginPage adminLoginPage = new AdminLoginPage();
@@ -22,6 +24,6 @@ public class TestForgetPasswordPage extends DriverSetup {
     void testBackToLoginPageLink() {
         getDriver().get(adminForgetPage.forgetPageUrl);
         adminForgetPage.clickOnElement(adminForgetPage.backToLoginPageLink);
-        Assert.assertEquals(getDriver().getCurrentUrl(),adminLoginPage.logInPageUrl);
+        Assert.assertEquals(getDriver().getCurrentUrl(),adminLoginPageUrl);
     }
 }

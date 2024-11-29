@@ -17,7 +17,6 @@ public class AdminRegistrationPage extends BasePage{
     public String passwordNotMatchWarningMsg = "Password does not match.";
     public String termAndConditionNotAcceptWarningMsg = "You must agree to the terms and conditions.";
     public String emailFieldRequiredMsg = "The form.email field is required.";
-
     public By lastNameRequireWarningElement = By.xpath("//p[contains(text(),'Last name is required.')]");
     public By emailAlreadyExistWarningElement = By.xpath("//p[contains(text(),'Email address already exists.')]");
     public By passwordNotMatchWarningElement = By.xpath("//p[contains(text(),'Password does not match.')]");
