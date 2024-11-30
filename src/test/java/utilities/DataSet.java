@@ -5,6 +5,10 @@ import org.testng.annotations.DataProvider;
 public class DataSet {
 
     public static String adminLoginPageUrl = "https://app.klasio.dev/login";
+    public static String ownerFirstName = "Ashraf";
+    public static String ownerLastName = "Ali";
+    public static String ownerEmailAddress = "testaccount09@gmail.com";
+    public static String ownerPassword = "123456789";
 
     @DataProvider(name = "adminRegistrationInvalidDataSet")
     public static Object invalidCredentials() {
@@ -22,10 +26,10 @@ public class DataSet {
         return signUpDataSet;
     }
 
-    @DataProvider(name = "adminRegistrationValidDataSet")
+    @DataProvider(name = "adminRegistrationWithExistingAccountEmail")
     public static Object validCredentials() {
         Object[][] signUpDataSet = {
-                {"Ashraf","Ali","test@academy.com","123456789","123456789"}
+                {"Ashraf","Ali","instructor@wedevs.com","123456789","123456789"}
         };
         return signUpDataSet;
     }

@@ -11,7 +11,7 @@ public class AdminRegistrationPage extends BasePage{
     public By repeatPasswordField = By.id("form.password_confirmation");
     public By termsAndConditionCheckBox = By.id("form.terms");
     public By ContinueButton = By.xpath("//button[@type='submit']");
-    public By logInLink = By.linkText("//button[@type='submit']");
+    public By logInLink = By.linkText("Login");
     public String emailAlreadyExistWarningMsg = "Email address already exists.";
     public String lastNameRequiredWarningMsg = "Last name is required.";
     public String passwordNotMatchWarningMsg = "Password does not match.";
@@ -22,5 +22,5 @@ public class AdminRegistrationPage extends BasePage{
     public By passwordNotMatchWarningElement = By.xpath("//p[contains(text(),'Password does not match.')]");
     public By termAndConditionNotAcceptWarningElement = By.xpath("//p[contains(text(),'You must agree to the terms and conditions.')]");
     public By emailFieldRequiredElement = By.xpath("//p[contains(text(),'The form.email field is required.')]");
-
+    public By termsAndConditionLinkElement = By.linkText("Terms & Conditions");
 }

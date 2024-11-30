@@ -17,6 +17,7 @@ public class BasePage {
         return waitForElementToBePresence(locator);
     }
     public void clickOnElement(By locator) {
+        scrollToSpecificElement(locator);
         waitForElementToBeClickable(locator);
         getElement(locator).click();
     }
@@ -52,5 +53,10 @@ public class BasePage {
 
     public void acceptAlert() {
         getDriver().switchTo().alert().accept();
+    }
+
+    public void scrollToSpecificElement(By locator) {
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement(getElement(locator));
     }
 }
