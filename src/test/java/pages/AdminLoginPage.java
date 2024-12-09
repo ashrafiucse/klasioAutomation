@@ -10,4 +10,10 @@ public class AdminLoginPage extends BasePage{
     public By forgotPasswordLink = By.linkText("Forgot password?");
     public By signUpLink = By.linkText("Sign Up");
     public By warningMessage = By.xpath("//*[contains(text(),'These credentials do not match our records.')]");
+
+    public void doLogin(String emailAddress, String password) {
+        sendKeysText(emailInputField, emailAddress);
+        sendKeysText(passwordInputField, password);
+        clickOnElement(logInButton);
+    }
 }

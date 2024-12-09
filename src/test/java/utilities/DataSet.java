@@ -7,7 +7,7 @@ public class DataSet {
     public static String adminLoginPageUrl = "https://app.klasio.dev/login";
     public static String ownerFirstName = "Ashraf";
     public static String ownerLastName = "Ali";
-    public static String ownerEmailAddress = "testaccount09@gmail.com";
+    public static String ownerEmailAddress = "ashrafqa.office@gmail.com";
     public static String ownerPassword = "123456789";
 
     @DataProvider(name = "adminRegistrationInvalidDataSet")

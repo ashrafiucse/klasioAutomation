@@ -14,7 +14,8 @@ public class TestForgetPasswordPage extends DriverSetup {
 
     @Test
     void testForgetPassword() {
-        getDriver().get(adminForgetPage.forgetPageUrl);
+        getDriver().get(adminLoginPageUrl);
+        adminLoginPage.clickOnElement(adminLoginPage.forgotPasswordLink);
         adminForgetPage.sendKeysText(adminForgetPage.emailInputField,"khanacademy@gmail.com");
         adminForgetPage.clickOnElement(adminForgetPage.sendResetLinkButton);
         Assert.assertEquals(adminForgetPage.getElement(adminForgetPage.successMessageTextElement).getText(),adminForgetPage.successMessageText);
@@ -22,7 +23,9 @@ public class TestForgetPasswordPage extends DriverSetup {
 
     @Test
     void testBackToLoginPageLink() {
-        getDriver().get(adminForgetPage.forgetPageUrl);
+        //getDriver().get(adminForgetPage.forgetPageUrl);
+        getDriver().get(adminLoginPageUrl);
+        adminLoginPage.clickOnElement(adminLoginPage.forgotPasswordLink);
         adminForgetPage.clickOnElement(adminForgetPage.backToLoginPageLink);
         Assert.assertEquals(getDriver().getCurrentUrl(),adminLoginPageUrl);
     }
