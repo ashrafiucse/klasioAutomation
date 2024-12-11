@@ -23,7 +23,12 @@ public class BasePage {
     }
 
     public boolean isElementVisible(By locator) {
-        return getElement(locator).isDisplayed();
+        try {
+            return getDriver().findElement(locator).isDisplayed();
+        }
+        catch (Exception e) {
+            return false;
+        }
     }
 
     public void sendKeysText(By locator,String inputText) {

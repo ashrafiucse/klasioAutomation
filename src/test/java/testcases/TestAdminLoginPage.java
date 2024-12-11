@@ -2,6 +2,7 @@ package testcases;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.*;
@@ -15,7 +16,7 @@ public class TestAdminLoginPage extends DriverSetup {
     AdminRegistrationPage adminRegistrationPage = new AdminRegistrationPage();
     AdminDashBoardPage adminDashBoardPage = new AdminDashBoardPage();
 
-    @BeforeTest
+    @BeforeMethod
     public void navigateToAdminLoginPage() {
         getDriver().get(adminLoginPageUrl);
     }

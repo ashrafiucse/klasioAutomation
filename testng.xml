@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSgtTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="G:/FIGLAB/Automation Project/KlasioWebAutomation/src/test/java/testcases">
+        <classes>
+            <class name="testcases.TestAdminLoginPage">
+                <methods>
+                    <include name="testLoginPageLoadSuccessfully"/>
+                    <include name="testForgetPasswordPageRedirectSuccessfully"/>
+                    <include name="testRegistrationPageLoadSuccessfully"/>
+                    <include name="testLoginWithValidCredentials"/>
+                    <include name="testLoginWithInvalidCredentials"/>
+                </methods>
+            </class>
+            <class name="testcases.TestForgetPasswordPage">
+                <methods>
+                    <include name="testForgetPassword"/>
+                    <include name="testBackToLoginPageLink"/>
+                </methods>
+            </class>
+            <class name="testcases.TestSchoolRegistration">
+                <methods>
+                    <include name="testTermsAndConditionsLink"/>
+                    <include name="testLogInLinkInRegistrationPage"/>
+                    <include name="testRegistrationWithInvalidData"/>
+                    <include name="testRegistrationWithoutAcceptingTermsAndConditions"/>
+                    <include name="testWithExistingAccountEmail"/>
+                    <include name="testRegistrationWithValidFields"/>
+                    <include name="testSignUpWithSelectingSchoolType"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
